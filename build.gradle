@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
         google()
         jcenter()
-        maven { url "https://dl.bintray.com/kotlin/kotlin-eap" }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
         maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
     }
 
@@ -131,16 +131,16 @@ kotlin {
         iosX64("iosX64")
 
         configure([iosArm64, iosX64]) {
-            binaries.findAll {
+            binaries.matching {
                 it instanceof org.jetbrains.kotlin.gradle.plugin.mpp.Framework
-            }.every {
+            }.all {
                 it.export 'com.ekahau.prototypes.khtf:khtf-lib-a:1.0.+'
                 it.export 'com.ekahau.prototypes.khtf:khtf-lib-c:1.0.+'
                 it.export 'com.ekahau.prototypes.khtf:khtf-lib-f:1.0.+'
                 it.export 'com.ekahau.prototypes.khtf:khtf-lib-g:1.0.+'
                 it.export 'com.ekahau.prototypes.khtf:khtf-lib-h:1.0.+'
                 it.transitiveExport = true
-                //it.isStatic = false
+                it.isStatic = false
             }
         }
 
