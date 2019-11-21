@@ -12,5 +12,6 @@ pluginManagement {
 
 enableFeaturePreview('GRADLE_METADATA')
 
-rootProject.name = 'khtf-iosapp-fw'
+// name should contain only numbers and letters for dynamic framework to be resolved correctly
+rootProject.name = 'KhtfIosAppFw'
 
